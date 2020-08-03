@@ -4,20 +4,30 @@
 2-player Tug-of-War game implemented with LEDs and buttons, and managed by a Raspberry Pi 4 via GPIO.
 
 Each round, players will battle to click their button before their opponent.
-The rope (represented by LEDs) will nudge one step towards the person that clicked too slow.
-A player wins when the rope has reached their opponent's side.
+The rope (represented by LEDs) will nudge one step towards the player that clicked too slow.
+A player wins when the rope has reached their opponent's side (4 steps)
+
+Requires:
+
+  - Raspberry Pi
+  - Breakout Expansion Board
+  - Ribbon Cable
+  - Assembled T Type GPIO Adapter
+  - Breadboard
+  - 7x LEDs
+  - 2x buttons
 
 - Implements:
 
-  - Startup sequence
+  - 4-step tug-of-war game
   - Reset
-  - Win sequence
+  - Startup, win sequence
   - Rounds starting randomly either 1s or 2s
   - Ability to play again
 
 - Areas for improvements:
 
-  - Currently left has the advantage because when a button is clicked, the left player's button is checked first. Game will still perform well as the script runs much faster than the players click, but it would be optimal if this was fixed so that both players have a fair chance. A listener would work.
+  - Currently left has the advantage because the left player's button is checked first when a button is clicked. Game will still perform well as the script runs much faster than the players' clicks, but it would be optimal if this was fixed so that the game is completely fair. A listener would work.
 
   - Currently implements while loops to check player activity which is extremely resource-hungry - implement listeners instead.
 
