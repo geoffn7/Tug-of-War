@@ -7,7 +7,7 @@ Each round, players will battle to click their button before their opponent.
 The rope (represented by LEDs) will nudge one step towards the player that clicked too slow.
 A player wins when the rope has reached their opponent's side (4 steps)
 
-Requires:
+- Requires:
 
   - Raspberry Pi
   - Breakout Expansion Board
