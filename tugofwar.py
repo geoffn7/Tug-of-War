@@ -66,38 +66,8 @@ def reset(GPIO):
 			cleared = True
 
 def startup_sequence():
-        count = 0
+    count = 0
 	while count < 2:
-                GPIO.output(N, GPIO.HIGH)
-                time.sleep(0.1)
-                GPIO.output(N, GPIO.LOW)
-                GPIO.output(L1, GPIO.HIGH)
-                GPIO.output(R1, GPIO.HIGH)
-                time.sleep(0.1)
-                GPIO.output(L1, GPIO.LOW)
-                GPIO.output(R1, GPIO.LOW)
-                GPIO.output(L2, GPIO.HIGH)
-                GPIO.output(R2, GPIO.HIGH)
-                time.sleep(0.1)
-                GPIO.output(L2, GPIO.LOW)
-                GPIO.output(R2, GPIO.LOW)
-                GPIO.output(L3, GPIO.HIGH)
-                GPIO.output(R3, GPIO.HIGH)
-                time.sleep(0.1)
-                GPIO.output(L3, GPIO.LOW)
-                GPIO.output(R3, GPIO.LOW)
-                GPIO.output(L2, GPIO.HIGH)
-                GPIO.output(R2, GPIO.HIGH)
-                time.sleep(0.1)
-                GPIO.output(L2, GPIO.LOW)
-                GPIO.output(R2, GPIO.LOW)
-                GPIO.output(L1, GPIO.HIGH)
-                GPIO.output(R1, GPIO.HIGH)
-                time.sleep(0.1)
-                GPIO.output(L1, GPIO.LOW)
-                GPIO.output(R1, GPIO.LOW)
-                count+=1
-
         GPIO.output(N, GPIO.HIGH)
         time.sleep(0.1)
         GPIO.output(N, GPIO.LOW)
@@ -116,83 +86,108 @@ def startup_sequence():
         time.sleep(0.1)
         GPIO.output(L3, GPIO.LOW)
         GPIO.output(R3, GPIO.LOW)
+        GPIO.output(L2, GPIO.HIGH)
+        GPIO.output(R2, GPIO.HIGH)
+        time.sleep(0.1)
+        GPIO.output(L2, GPIO.LOW)
+        GPIO.output(R2, GPIO.LOW)
+        GPIO.output(L1, GPIO.HIGH)
+        GPIO.output(R1, GPIO.HIGH)
+        time.sleep(0.1)
+        GPIO.output(L1, GPIO.LOW)
+        GPIO.output(R1, GPIO.LOW)
+        count+=1
+
+    GPIO.output(N, GPIO.HIGH)
+    time.sleep(0.1)
+    GPIO.output(N, GPIO.LOW)
+    GPIO.output(L1, GPIO.HIGH)
+    GPIO.output(R1, GPIO.HIGH)
+    time.sleep(0.1)
+    GPIO.output(L1, GPIO.LOW)
+    GPIO.output(R1, GPIO.LOW)
+    GPIO.output(L2, GPIO.HIGH)
+    GPIO.output(R2, GPIO.HIGH)
+    time.sleep(0.1)
+    GPIO.output(L2, GPIO.LOW)
+    GPIO.output(R2, GPIO.LOW)
+    GPIO.output(L3, GPIO.HIGH)
+    GPIO.output(R3, GPIO.HIGH)
+    time.sleep(0.1)
+    GPIO.output(L3, GPIO.LOW)
+    GPIO.output(R3, GPIO.LOW)
 
 def win_sequence(score):
-        count = 0
+    count = 0
 	if score == WR:
 		print("Congratulations Mr. Right!")
 		while count < 3:
-                        GPIO.output(L3, GPIO.HIGH)
-                        time.sleep(0.05)
-                        GPIO.output(L3, GPIO.LOW)
-                        GPIO.output(L2, GPIO.HIGH)
-                        time.sleep(0.05)
-                        GPIO.output(L2, GPIO.LOW)
-                        GPIO.output(L1, GPIO.HIGH)
-                        time.sleep(0.05)
-                        GPIO.output(L1, GPIO.LOW)
-                        GPIO.output(N, GPIO.HIGH)
-                        time.sleep(0.05)
-                        GPIO.output(N, GPIO.LOW)
-                        GPIO.output(R1, GPIO.HIGH)
-                        time.sleep(0.05)
-                        GPIO.output(R1, GPIO.LOW)
-                        GPIO.output(R2, GPIO.HIGH)
-                        time.sleep(0.05)
-                        GPIO.output(R2, GPIO.LOW)
-                        GPIO.output(R3, GPIO.HIGH)
-                        time.sleep(0.05)
-                        GPIO.output(R3, GPIO.LOW)
-                        count+=1
+            GPIO.output(L3, GPIO.HIGH)
+            time.sleep(0.05)
+            GPIO.output(L3, GPIO.LOW)
+            GPIO.output(L2, GPIO.HIGH)
+            time.sleep(0.05)
+            GPIO.output(L2, GPIO.LOW)
+            GPIO.output(L1, GPIO.HIGH)
+            time.sleep(0.05)
+            GPIO.output(L1, GPIO.LOW)
+            GPIO.output(N, GPIO.HIGH)
+            time.sleep(0.05)
+            GPIO.output(N, GPIO.LOW)
+            GPIO.output(R1, GPIO.HIGH)
+            time.sleep(0.05)
+            GPIO.output(R1, GPIO.LOW)
+            GPIO.output(R2, GPIO.HIGH)
+            time.sleep(0.05)
+            GPIO.output(R2, GPIO.LOW)
+            GPIO.output(R3, GPIO.HIGH)
+            time.sleep(0.05)
+            GPIO.output(R3, GPIO.LOW)
+            count+=1
 
 	elif score == WL:
 		print("Lefties have always been better at everything ;)")
 		while count < 3:
-                        GPIO.output(R3, GPIO.HIGH)
-                        time.sleep(0.05)
-                        GPIO.output(R3, GPIO.LOW)
-                        GPIO.output(R2, GPIO.HIGH)
-                        time.sleep(0.05)
-                        GPIO.output(R2, GPIO.LOW)
-                        GPIO.output(R1, GPIO.HIGH)
-                        time.sleep(0.05)
-                        GPIO.output(R1, GPIO.LOW)
-                        GPIO.output(N, GPIO.HIGH)
-                        time.sleep(0.05)
-                        GPIO.output(N, GPIO.LOW)
-                        GPIO.output(L1, GPIO.HIGH)
-                        time.sleep(0.05)
-                        GPIO.output(L1, GPIO.LOW)
-                        GPIO.output(L2, GPIO.HIGH)
-                        time.sleep(0.05)
-                        GPIO.output(L2, GPIO.LOW)
-                        GPIO.output(L3, GPIO.HIGH)
-                        time.sleep(0.05)
-                        GPIO.output(L3, GPIO.LOW)
-                        count+=1
+            GPIO.output(R3, GPIO.HIGH)
+            time.sleep(0.05)
+            GPIO.output(R3, GPIO.LOW)
+            GPIO.output(R2, GPIO.HIGH)
+            time.sleep(0.05)
+            GPIO.output(R2, GPIO.LOW)
+            GPIO.output(R1, GPIO.HIGH)
+            time.sleep(0.05)
+            GPIO.output(R1, GPIO.LOW)
+            GPIO.output(N, GPIO.HIGH)
+            time.sleep(0.05)
+            GPIO.output(N, GPIO.LOW)
+            GPIO.output(L1, GPIO.HIGH)
+            time.sleep(0.05)
+            GPIO.output(L1, GPIO.LOW)
+            GPIO.output(L2, GPIO.HIGH)
+            time.sleep(0.05)
+            GPIO.output(L2, GPIO.LOW)
+            GPIO.output(L3, GPIO.HIGH)
+            time.sleep(0.05)
+            GPIO.output(L3, GPIO.LOW)
+            count+=1
 
 def tugofwar(GPIO):
 
 	score = N
 	while True:
 
-                ready = False
-                while ready == False:
-                        time.sleep(randint(1, 2))
-                        if GPIO.input(Right) == False and GPIO.input(Left) == True: ready = True
-                        else: print("Let go of the button! No cheating!")
-
-
-
-
-
+        ready = False
+        while ready == False:
+            time.sleep(randint(1, 2))
+            if GPIO.input(Right) == False and GPIO.input(Left) == True: ready = True
+            else: print("Let go of the button! No cheating!")
 
 		GPIO.output(score, GPIO.HIGH)
 		print("Click that button!")
 		while True:
 			if GPIO.input(Right) == True or GPIO.input(Left) == False: #equal chance
-                                time.sleep(0.1)
-				print("Someone clicked it~!")
+                time.sleep(0.1)
+				print("Someone clicked it!")
 				GPIO.output(score, GPIO.LOW)
 				if GPIO.input(Left) == False: #Left pushed first
 					if score == L3:		score = WL
