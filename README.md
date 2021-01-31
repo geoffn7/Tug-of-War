@@ -14,6 +14,8 @@ A player wins when the rope has reached their opponent's side (4 steps)
   - Ribbon Cable
   - Assembled T Type GPIO Adapter
   - Breadboard
+  - wires
+  - 9x 1k ohm resistors
   - 7x LEDs
   - 2x buttons
 
