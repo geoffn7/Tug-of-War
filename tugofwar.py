@@ -179,7 +179,7 @@ def tugofwar(GPIO):
 		ready = False
 		while ready == False:
 			time.sleep(randint(1, 2))
-			if GPIO.input(Right) == False and GPIO.input(Left) == False: ready = True
+			if GPIO.input(Right) == True and GPIO.input(Left) == True: ready = True
 			else: print("Let go of the button! No cheating!")
 
 		GPIO.output(score, GPIO.HIGH)
