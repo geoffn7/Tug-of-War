@@ -11,17 +11,17 @@ GPIO.setwarnings(False)
 #Game Definitions
 #Dependent on breadboard setup
 WL = 4 #arbitrary number
-L3 = 17
-L2 = 27
-L1 = 22
+L3 = 13
+L2 = 19
+L1 = 26
 N = 12
 R1 = 16
 R2 = 20
 R3 = 21
 WR = 7 #arbitrary number
 
-Right = 23
-Left = 18
+Right = 4
+Left = 17
 
 #Inputs: (2 Buttons)
 GPIO.setup(Right, GPIO.IN)
@@ -39,7 +39,7 @@ GPIO.setup(R3, GPIO.OUT)
 def reset(GPIO):
 	cleared = False
 	while cleared == False:
-		if GPIO.input(Right) == True or GPIO.input(Left) == False:
+		if GPIO.input(Right) == True or GPIO.input(Left) == True:
 			GPIO.output(R3, GPIO.LOW)
 			GPIO.output(R2, GPIO.LOW)
 			GPIO.output(R1, GPIO.LOW)
@@ -179,17 +179,17 @@ def tugofwar(GPIO):
 		ready = False
 		while ready == False:
 			time.sleep(randint(1, 2))
-			if GPIO.input(Right) == False and GPIO.input(Left) == True: ready = True
+			if GPIO.input(Right) == False and GPIO.input(Left) == False: ready = True
 			else: print("Let go of the button! No cheating!")
 
 		GPIO.output(score, GPIO.HIGH)
 		print("Click that button!")
 		while True:
-			if GPIO.input(Right) == True or GPIO.input(Left) == False: #equal chance
+			if GPIO.input(Right) == True or GPIO.input(Left) == True: #equal chance
 				time.sleep(0.1)
 				print("Someone clicked it!")
 				GPIO.output(score, GPIO.LOW)
-				if GPIO.input(Left) == False: #Left pushed first
+				if GPIO.input(Left) == True: #Left pushed first
 					if score == L3:		score = WL
 					elif score == L2:	score = L3
 					elif score == L1:	score = L2
@@ -241,26 +241,28 @@ if __name__ == "__main__":
 	wantToPlay = True
 	startup_sequence()
 	while wantToPlay == True:
+		
 		print("Are you ready?")
 
 		while True:
-			if GPIO.input(Right) == True or GPIO.input(Left) == False: break
+			if GPIO.input(Right) == True or GPIO.input(Left) == True: break
 
 		print("Let's begin!")
-
+		
 		reset(GPIO)
+		
 		score = tugofwar(GPIO)
 		win_sequence(score)
-
+		
 		print("Want to Play Again?")
 		wantToPlay = False
 		count = 0
 		while count < 70:
-			if GPIO.input(Right) == True or GPIO.input(Left) == False:
+			if GPIO.input(Right) == True or GPIO.input(Left) == True:
 				wantToPlay = True
 				break
 			count+=1
 			time.sleep(0.1)
-
+		
 	print("Thank you for playing!")
 	sys.exit()
